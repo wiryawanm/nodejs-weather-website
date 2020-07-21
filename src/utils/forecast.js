@@ -15,11 +15,14 @@ const forecast = (latitude,longitude, callback) => {
         const temperature = body.current.temperature
         const feelslike = body.current.feelslike
         const weather_description = body.current.weather_descriptions[0]
+        
+        const forecast_str = "The weather is currently " +weather_description+ ". Temperature reads " + temperature + " but feels like " + feelslike + "."
 
             callback(undefined,{
                 Forecast: weather_description,
                 Temperature:  temperature,
-                FeelsLike: feelslike
+                FeelsLike: feelslike,
+                ForecastStr: forecast_str
             })
         }
     
